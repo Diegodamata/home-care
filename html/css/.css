@@ -9,12 +9,10 @@
     width: 100%;
     top: 0;
     position: fixed;
-    position: absolute;
 }
 
 .nav{
     display: flex;
-    position: absolute;
     flex-direction: row;
     background: linear-gradient(120deg, #2ad1f8, #8a58b9);
 }
@@ -137,7 +135,7 @@ h2{
 }
 
 .trabalhe{
-    color: rgb(223, 223, 96);
+    color: rgb(173, 173, 4);
     padding-top: 80px;
     padding-bottom: 30px;
     font-size: 40px;
@@ -161,6 +159,10 @@ input{
 .button:hover{
     cursor: pointer;
     box-shadow: 3px 3px 3px 3px #c0bfbf;
+}
+
+.dados{
+    color: #fff;
 }
 
 

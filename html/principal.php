@@ -224,8 +224,5 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="./vanilla-tilt.js"></script>
-    <script>VanillaTilt.init(document.querySelectorAll(".container"));</script>
-    <script>VanillaTilt.init(document.querySelectorAll(".cont"));</script>
 </body>
 </html>
