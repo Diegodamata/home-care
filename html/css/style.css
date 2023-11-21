@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+  }
+#header{
+  display: flex;
+  background: linear-gradient(120deg, #2ad1f8, #8a58b9);
+}
+#header h1{
+  margin-right: 900px;
+}
+#header h3{
+  margin: 10px;
+  margin-left: 200px;
+}
+h1 img{
+  height: 30px;
+  width: 30px;
+}
+
+h3 img {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+}
+
+#principal{
+  display: flex;
+}
+#main{
+  height: 600px;
+  width: 700px;
+}
+
+#main h1{
+  font-size: 50px;
+  margin: 100px;
+  margin-bottom: 50px;
+}
+#main h5{
+  color: #848484;
+  margin-left: 100px;
+  margin-bottom: 50px;
+  font-size: 1rem;
+}
+
+#main h4{
+  background-color: rgb(69, 248, 42);
+  height: 70px;
+  width: 250px;
+  margin-left: 120px;
+  font-size: 20px;
+  padding: 20px;
+  color: white;
+}
+
+#footer{
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  margin-top: 100px;
+}
+
+h6{
+  width: 400px;
+  height: 150px;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+}
+
+#aside{
+  display: flex;
+  height: 700px;
+  width: 90px;
+}
+#aside img{
+  margin-left: 100px;
+}
+
+h6 img{
+  height: 100px;
+  width: 100px;
+  margin-left: 2px;
+  margin-top: 10px;
+}
+
+#button{
+  width: 50px;
+  height: 30px;
+}
+
+#menu{
+  color: black;
+  display: block;
+  cursor: pointer;
+  padding-top: 7px;
+  padding-left: 10px;
+  position: absolute;
+ 
+}
+
+#menu:hover{
+  color: rgb(125, 110, 110);
+}
+
+menu{
+  display: none;
+  position: absolute;
+}
+
+menu ul {
+  width: 250px;
+  height: 100vh;
+  background-color: #dae2da;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+menu ul li{
+  margin: 20px;
+  width: 250px;
+  height: 50px;
+  margin-bottom: 1px;
+  background: rgb(227, 223, 223);
+}
+.mecher{
+  text-decoration: none;
+  margin-top: 20px;
+  color: black;
+  font-size: 40px;
+}
+menu ul li:hover{
+  background: rgb(122, 118, 118);
+  color: #fff;
+}
+h3 a{
+  border-radius: 2px;
+}
+h3 a:hover{
+  border-radius: 2px;
+  color: #fff;
+}
+
+
+
+
+

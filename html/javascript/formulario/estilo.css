@@ -1,0 +1,150 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #121212;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{
+    background-color: #fafafa;
+    border-radius: 14px;
+    margin: 14px;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: 0 3px 5px rgba(0,0,0, 0.5);
+    overflow: hidden;
+  }
+#formu{
+    padding: 18px;
+}
+.titulo{
+    background: linear-gradient(120deg, #2ad1f8, #8a58b9);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.group{
+    margin-bottom: 8px;
+    padding-bottom: 18px;
+    position: relative;
+}
+
+.group label{
+    display: block;
+    margin-bottom: 2px;
+    font-size: 17px;
+}
+.group input{
+    display: block;
+  width: 100%;
+  border-radius: 8px;
+  padding: 9px;
+  border: 2px solid #dfdfdf;
+}
+.btn{
+  color: #171313;
+  width: 100%;
+  border-radius: 14px;
+  padding: 10px;
+  border: 2px solid #dfdfdf;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 14px;
+}
+.btn:hover{
+    background: linear-gradient(120deg, #2ad1f8, #8a58b9);
+    color: #fff;
+    cursor: pointer;
+}
+.trabalho{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+
+
+
+
+/*divs do estado civil*/
+.estado-civil{
+    position: relative;
+}
+
+.estado-civil .estado{
+    display: inline-block;
+}
+.estado-civil input{
+    margin-top: 12px;
+}
+.raca input{
+    margin-top: 12px;
+}
+.genero input{
+    margin-top: 12px;
+}
+.escolaridade input{
+    margin-top: 12px;
+}
+
+
+
+
+
+
+
+
+
+/*posição da frase de erro*/
+.group a{
+    position: absolute;
+    bottom: -0px;
+    left: 0;
+    visibility: hidden;
+}
+/*msg de erro*/
+.group.error input{
+    border-color: #ff3b25;
+  }
+/*ir aparecer a msg de erro*/
+.group.error a{
+    color: #ff3b25;
+    visibility: visible;
+  }
+
+.error-hidden {
+    display: none;
+}
+.estado-civil-error {
+    color: red; /* ou qualquer outra cor desejada */
+}
+
+.raca-error{
+    color: #ff3b25;
+}
+
+.genero-error{
+    color: #ff3b25;
+}
+
+.escolaridade-error{
+    color: #ff3b25;
+}
+
+.trabalho-error{
+    color: #ff3b25;
+}
+.vocee-error{
+    color: #ff3b25;
+}
+.filhos-error{
+    color: #ff3b25;
+}
