@@ -6,7 +6,7 @@
     <title>Document</title>
 	<style>
 		body{
-			background-color: black;
+			background: radial-gradient(circle at 50% 50%, #192233 20%, #000);
 		}
 		
 	 .box{
@@ -19,11 +19,9 @@
 		height: 450px;
 		width: 350px;
 		background-color: white;
-		border-radius: 20px;
+		border-radius: 8px;
 	 }
-	 .box:hover{
-		box-shadow: 5px 5px 5px 5px #8a58b9;
-	 }
+	 
 	 .field{
 		display: flex;
 		justify-content: center;
@@ -132,6 +130,67 @@
 	<?php 
 session_start();
 
+if (isset($_POST['send'])){
+	 $userEmail = $_POST['email'];
+     $userSenha = $_POST['senha'];
+
+	 $arrayLogin = [
+		'login' => [
+				[
+						'email' => 'Diego',
+						'senha' => password_hash('1234', PASSWORD_DEFAULT)
+				],
+				[
+						'email' => 'Bob',
+						'senha' => password_hash('5678', PASSWORD_DEFAULT)
+				],
+				[
+						'email' => 'Maria',
+						'senha' => password_hash('5432', PASSWORD_DEFAULT)
+				]
+		]
+	];
+	
+	// converti para json
+	$dadosJason = json_encode($arrayLogin);
+	
+	// echo $dadosJason;
+	
+	file_put_contents('/xampp/htdocs/homecare/dados.json', $dadosJason); //file_put_contents serve para pegar o arquivo que vc quer guardar os dados, e passar os dados que vc quer q seja armazenado
+
+	$arquivoJson = file_get_contents('/xampp/htdocs/homecare/dados.json'); //acosso o arquivo json com as senhas criptografadas
+	$dadosJasonDecodificado = json_decode($arquivoJson, true); //json_decode para converter para array
+	
+	if(empty($userEmail) && empty($userSenha)){ // se o usuario não preencher nada mostrara esssa msg de erro
+		echo '<div class="msgErro">Email e senha é obrigatório</div>';
+	}
+		foreach ($dadosJasonDecodificado['login'] as $usuarioInfo) { //foreach para percorrer $dadosJasonDecodificado['login'] do array login, e armazear na variavel $usuarioInfo
+        
+			if (!empty($userEmail) !== $usuarioInfo['email']  && !empty($userSenha) !== password_verify($userSenha, $usuarioInfo['senha'])) {  //vai verificar se nao estiver vazio e se for diferente mostrara o erro
+				echo '<div class="msgErro">Email ou senha inválida</div>';
+				break;
+			}else if ($userEmail == $usuarioInfo['email'] && $userSenha == password_verify($userSenha, $usuarioInfo['senha'])) {  //se igual irá redirecionar para a pagina
+				$_SESSION['usuario'] = $userEmail; //crio uma session para receber o valor do nome da pessoa
+				header('Location: principal.php');
+			}
+			
+		}
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 if (isset($_POST['send'])) {
 	
 	$userEmail = $_POST['email'];
@@ -143,8 +202,9 @@ if (isset($_POST['send'])) {
 		echo '<div class="msgErro">Email ou senha inválida</div>';
 	}
 
-}
-	
+}*/
+
+/*
 function validaLogin ($usuario, $senha){
 	
 	$dadosJason = file_get_contents('/xampp/htdocs/homecare/dados.json');
@@ -152,11 +212,10 @@ function validaLogin ($usuario, $senha){
     $dadosJasonDecodificado = json_decode($dadosJason, true);
 
 
-
 	foreach ($dadosJasonDecodificado['logins'] as $usuarioInfo) {
-        
+        $senhaCodificada  = password_hash($usuarioInfo['password'], PASSWORD_DEFAULT);
  
-		if ($usuario == $usuarioInfo['email'] && $senha == $usuarioInfo['password']) {  
+		if ($usuario == $usuarioInfo['email'] && $senha == password_verify('password', $senhaCodificada)) {  
 			$_SESSION['usuario'] = $usuario;
 			return true; // Login válido
 		}
@@ -164,7 +223,7 @@ function validaLogin ($usuario, $senha){
 	}
 			return false; // Login inválido
 }
-	
+	*/
 ?>
 
 </body>

@@ -9,12 +9,14 @@
     width: 100%;
     top: 0;
     position: fixed;
+    
 }
 
 .nav{
     display: flex;
     flex-direction: row;
     background: linear-gradient(120deg, #2ad1f8, #8a58b9);
+    z-index: 8;
 }
 .nav .homecare {
     padding: 10px;
@@ -75,15 +77,15 @@
     margin-left: 200px;
     height: 300px;
     width: 400px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 5px -5px 5px 5px rgb(105, 96, 96);
+    border-radius: 8px;
+    box-shadow: 2px -2px 2px 2px rgb(105, 96, 96);
    
     
 }
 .container:hover{
-    box-shadow: 5px 5px 5px 5px rgb(60, 59, 59);
+    box-shadow: 2px 2px 2px 2px rgb(60, 59, 59);
 }
+
 .cont{
     display: flex;
     flex-direction: column;
@@ -93,13 +95,12 @@
     margin-left: 250px;
     height: 300px;
     width: 400px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow: 5px -5px 5px 5px rgb(105, 96, 96);
+    border-radius: 8px;
+    box-shadow: 2px -2px 2px 2px rgb(105, 96, 96);
    
 }
 .cont:hover{
-    box-shadow: 5px 5px 5px 5px rgb(60, 59, 59);
+    box-shadow: 2px 2px 2px 2px rgb(60, 59, 59);
 }
 
 .title{
@@ -141,29 +142,6 @@ h2{
     font-size: 40px;
 }
 
-input{
-    height: 40px;
-    width: 550px;
-    margin: 8px;
-    border: none;
-    border-radius: 5px;
-}
-
-.button{
-    height: 40px;
-    width: 550px;
-    border-radius: 5px;
-    background: white;
-    border: none;
-}
-.button:hover{
-    cursor: pointer;
-    box-shadow: 3px 3px 3px 3px #c0bfbf;
-}
-
-.dados{
-    color: #fff;
-}
 
 
 

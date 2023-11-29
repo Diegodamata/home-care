@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background: #121212;
+  background: #fff;
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -136,6 +136,7 @@ body{
 }
 
 .escolaridade-error{
+
     color: #ff3b25;
 }
 

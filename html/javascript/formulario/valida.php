@@ -1,3 +1,7 @@
+  
+   
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +9,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exercícios de validação de forms</title>
-    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="../formulario/estilo.css">
+    <style>
+        body{
+            background-color: #000;
+        }
+        .erro {
+            text-align: center;
+            color: red;
+        }
+
+        .erroData{
+            bottom: 0;
+            text-align: center;
+            color: red;
+            font-size: 30px;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,7 +95,7 @@
                     <input type="radio" name="estado_civil" id="estado_civil_viuvo" class="estado-civi">
                     <label for="estado_civil_viuvo">Viúvo</label>
                 </div>
-                <p class="error error-hidden estado-civil-error ">Selecione uma opção.</p>
+                <p class="error error-hidden estado-civil-error">Selecione uma opção.</p>
             </div>
             <hr />
             <div class="raca">
@@ -230,23 +250,16 @@
             </div>
             <hr />
             <p >Já tem uma conta?<a href="/homecare/html/entrar.php"> Entrar</a></p>
-            <div class="enviar">
-                <input type="submit" value="Cadastrar" class="btn" name="cadastrar" id="cadastrar">
-            </div>
-            
 
+            
+            <input type="submit" value="cadastrar" class="btn" name="send" id="cadastrar">
+            
+            <script src="javascript.js"></script>
+           
         </form>
     </div>
 
-    <script src="javascript.js"></script>
-
-    <?php
-
-    if(isset($_POST['cadastrar'])){
-        $data = $_POST['data_nasc'];
-    }
-
-
-    ?>
+    
+  
 </body>
 </html>

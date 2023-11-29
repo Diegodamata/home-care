@@ -13,6 +13,12 @@
             display: none;
         }
 
+        body{
+            background-image: url(./img/home.png);
+        }
+        #main h5{
+            color: #fff;
+        }
         
        
     </style>
@@ -60,10 +66,7 @@
                 </div>
             </div>
 
-            <div id="aside">
-                <img src="https://img.freepik.com/vetores-gratis/ilustracao-colorida-mulher-senior-sentada-na-cadeira-de-rodas-com-cuidador-isolado-no-fundo-branco_1284-41426.jpg?w=2000"
-                    alt="">
-            </div>
+            
 
 
         </div>

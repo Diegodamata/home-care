@@ -1,14 +1,1 @@
-{
-    "logins": [
-      {
-        "email": "Diego", 
-        "password": "1234"
-      },
-
-      {
-        "email": "Bob",
-        "password": "5678"
-      }
-    ]
-}
-  
+{"login":[{"email":"Diego","senha":"$2y$10$Wiy6HtIYzUnOCJj7gaStZuk52\/mKFVREVBBNXMJl2Hdow.jEpDuza"},{"email":"Bob","senha":"$2y$10$TIMFx1uFhCQxK0Wp9LLim.1MtVuC0k3H6v55mnC6knZFRpkerz2om"},{"email":"Maria","senha":"$2y$10$oGvc4mQLXZ2hrCUsM1YpL.B26YGk18rg6SGpHG8fa5CPEMJmXP6yi"}]}

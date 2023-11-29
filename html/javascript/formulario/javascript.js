@@ -49,23 +49,22 @@ form.addEventListener("submit", (event) => {
 
     checarSeEstaCorreto();
 
-    const valida = validateEstadoCivil();
+    const valida = validateEstadoCivil(); //variavel que ira receber se os input radio foi selecionado
     const validaRaca = validateRaca();
     const validaGenero = validateGenero();
     const validaEscolaridade = validateEscolaridade();
     const validaTrabalho = validateTrabalho();
     const validaVocee = validateVOCEe();
     const validaFilhos = validateFilhos();
-    if(valida && validaRaca && validaGenero && validaEscolaridade && validaTrabalho && validaVocee && validaFilhos){
+    if(valida && validaRaca && validaGenero && validaEscolaridade && validaTrabalho && validaVocee && validaFilhos){ //se input radio selecionado envia
         console.log("foii");
-    
     }
    
 });
 
 
-userName.addEventListener("input", () => {
-    checarNome();
+userName.addEventListener("input", () => { //add um evento oas input, quando queer enviar o formulario e dar o erro quando vc apertar de novo no input para escrever sumir o erro 
+    checarNome(); 
 })
 data.addEventListener("input", () => {
     checarData();
@@ -98,11 +97,11 @@ function checarNome() { //função para checar o nome se esta vazio
 
     if(nameValue === ""){ //se vazio
         errorInput(userName, "O nome é obrigatório.") //chama a classe errorIput e passa dois parametros
-    }else if(nameValue.length > 3){
+    }else if(nameValue.length > 3){ //se o valor de input tiver mais de 3 caractere nao ira enviar
         errorInput(userName, "Mínimo 3 caracteres.");
     }else{
-        const formItem = userName.parentElement;
-        formItem.className = "group";
+        const formItem = userName.parentElement; // se as duas condiçoes de cima for falsa o usuario preencheu corretamente
+        formItem.className = "group"; 
       }
 }
 function checarData() { //função para checar o nome se esta vazio
@@ -212,41 +211,41 @@ function checarSeEstaCorreto (){ //função para checar se todos os campos estã
     checarReligiao();
     checarProfissao();
    
-    const formItems = form.querySelectorAll(".group")
+    const formItems = form.querySelectorAll(".group") //adicionei a uma variavel todos os elementos .group
   
     const isValid = [...formItems].every( (item) => { //every vai verificar se todas as condições passa em alguma condição q a gente colocar
-      return item.className === "group"; //pro formulario ser enviado precisa estar todos validados com as classe group
+      return item.className === "group"; //pro formulario ser enviado precisa estar todos validados com as classe group apenas
     });
   
-    if(isValid){ //se estiver validado ira enviar
+    if(isValid){ //se estiver validado ira enviar // aqui pode mandar para um banco de dados
       alert("CADASTRADO COM SUCESSO!")
     }
 }
 
 function errorInput (input, msg){ //função para o erro se os campos não estiverem preenchidos vai adicionar uma classe com a msg de erro
-    const item = input.parentElement; 
-    const msgError = item.querySelector("a");
+    const item = input.parentElement;  //variavel que vai receber o parenteElement que é o pai do input que seria a class group
+    const msgError = item.querySelector("a"); //variavel recebento o item q vai informar qual parente, e nesse parente da um querySelector para pegar qual elemento filho dele 
     
-    msgError.innerText = msg;
+    msgError.innerText = msg; // msgError vai receber a msg que chegara como argumento
 
-    item.className = "group error";
+    item.className = "group error"; // e o item vai add um nome de uma classe q é o error onde mostrara o erro na tela
 }
 
 //função para o radio estado civil
 function validateEstadoCivil() {
-    let isRadioValid = false;
+    let isRadioValid = false; //verificar se o radio esta preenchido
 
-    for (const radioOption of inputEstadoCivil) {
-        if (radioOption.checked) {
+    for (const radioOption of inputEstadoCivil) { //percorrendo todas os opcoes de inputEstadoCivil
+        if (radioOption.checked) { //se estiver checado retorne true e encerra 
             isRadioValid = true;
             break;
         }
     }
 
-    if (!isRadioValid) {
+    if (!isRadioValid) { // se true ira remover a classe de erro com a msg de erro 
         estadoCivilError.classList.remove('error-hidden');
     } else {
-        estadoCivilError.classList.add('error-hidden');
+        estadoCivilError.classList.add('error-hidden'); // se false ira adicionar a classe com a msg de erro
     }
 
     return isRadioValid;
